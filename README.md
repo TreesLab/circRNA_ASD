@@ -23,7 +23,7 @@ The above steps in details:
 
 **Step1_lme_run.R**
 
-input: ```circRNA expression of 1060 events 2) host gene ENSG ID of 1060 circRNAs 3) characters of 134 individuals 4) mRNA expression of 134 individuals```
+input: ```1) circRNA expression of 1060 events 2) host gene ENSG ID of 1060 circRNAs 3) characters of 134 individuals 4) mRNA expression of 134 individuals```
 
 ouput: ```circ1060_DEG_Diagnosis_134s.csv```
 
