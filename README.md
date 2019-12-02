@@ -6,7 +6,7 @@ Chen et. al
 
 | Raw data | Description |
 |---|--- |
-| Microarray_circARID1A_miR204-3p.xlsx | We knockdown circARID1A, overexpressed circARID1A and miR-204-3p in ReNcell, independently. The gene expression changes were exmined by microarray analysis. The microarray result was used to identify the expression changes of 171 predicted target genes by circARID1A and miR-204-3p. |                          |
+| Microarray_circARID1A_miR204-3p.xlsx | We performed knockdown circARID1A, overexpressed circARID1A and miR-204-3p in ReNcell, independently. The gene expression changes were exmined by microarray analysis. The microarray result was used to identify the expression changes of 171 predicted target genes by circARID1A and miR-204-3p. |                          |
 
 
 ---
