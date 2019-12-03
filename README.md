@@ -1,5 +1,5 @@
 ### Geneme-wide, integrative analysis of circular RNA dysregulation and the corresponding circular RNA-microRNA-mRNA regulatory axes in autism
-Chen et. al 
+Chen et al. 
 
 ---
 **Data produced in this study** 
