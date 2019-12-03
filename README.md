@@ -49,7 +49,7 @@ input: ```circRNA and miRNA expreesion, circ_miRNA_mRNA_relation_short.xlsx```
 ouput: ```circRNA_mRNA_spearman.xlsx```
 
 
-**Step3.2_CorrelationmiRNA-mRNA.R**
+**Step3.2_Correlation_miRNA-mRNA.R**
 
 input: ```miRNA and mRNA expression, circ_miRNA_mRNA_relation_short.xlsx```
 
