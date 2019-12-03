@@ -19,7 +19,7 @@ All programming scripts used in this study were gathered in ASD_circ_R_codes.Rpr
 **Step3** : to calculate the correlation among circRNAs, microRNAs, and mRNAs
 
 ---
-The above steps in details: 
+Details of the above steps: 
 
 **Step1_lme_run.R**
 
