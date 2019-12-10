@@ -64,14 +64,20 @@ input:
           4) mRNA expression of 134 individuals (datExpr_134s.txt)
     
 
-ouput: ```circ1060_DEG_Diagnosis_134s.csv```
+ouput: 
+
+          circ1060_DEG_Diagnosis_134s.csv
 
 
 **Step2.1_Relation_circRNA-miRNA.R**
 
-input: ```DEcircRNAs, module circRNAs and their target miRNAs (RNA22_circRNA_miRNA_module.xlsx)```
+input: 
 
-output: ```circRNA_miRNA_relation.xlsx```
+          DEcircRNAs, module circRNAs and their target miRNAs (RNA22_circRNA_miRNA_module.xlsx)
+
+output: 
+
+          circRNA_miRNA_relation.xlsx
 
 
 **Step2.2_Relation_circRNA-miRNA-mRNA.R**
@@ -81,7 +87,10 @@ input:
       1) circRNA_miRNA_relation.xlsx
       2) miRNA target genes (Supplemental_Table S4_targets_of_58miRNAs.xlsx)
     
-output: ```circ_miRNA_mRNA_relation.xlsx and circ_miRNA_mRNA_relation_short.xlsx```
+output: 
+
+      1) circ_miRNA_mRNA_relation.xlsx
+      2) circ_miRNA_mRNA_relation_short.xlsx
 
 
 **Step3.1_Correlation_circRNA-miRNA.R**
@@ -93,7 +102,9 @@ input:
      2) circ_miRNA_mRNA_relation_short.xlsx
      
 
-ouput: ```circRNA_mRNA_spearman.xlsx```
+ouput: 
+
+     circRNA_mRNA_spearman.xlsx
 
 
 **Step3.2_Correlation_miRNA-mRNA.R**
@@ -104,7 +115,9 @@ input:
      2) mRNA expression (73s_normalized_log2_FPKM_miRNA_targetG_new.transpose)
      3) miRNA-mRNA relation (58miRNA_targets_ENSG.txt)
 
-output: ```miRNA_mRNA_spearman.xlsx```
+output: 
+
+     miRNA_mRNA_spearman.xlsx
 
 
 **Step3.3.1_Correlation_DEcircRNA-mRNA.R**
@@ -114,7 +127,9 @@ input:
      1) circRNA expreesion (circ60_indiv73.txt)
      2) mRNA expression (73s_normalized_miRNA_targetG_new.transpose)
 
-output: ```DEcircRNA_mRNA_spearman.xlsx```
+output: 
+
+     DEcircRNA_mRNA_spearman.xlsx
 
 
 **Step3.3.2_Correlation_module_circRNA-mRNA.R**
@@ -125,7 +140,9 @@ input:
       2) mRNA expreesion (73s_normalized_miRNA_targetG_new.transpose) 
       3) circ-miRNA-mRNA relation (mi-ci_sig_InModules_short.txt)
 
-output: ```Module_circRNA_mRNA_spearman.xlsx```
+output: 
+
+      Module_circRNA_mRNA_spearman.xlsx
 
 
 **Step3.4_Correlation_circRNA-miRNA-mRNA.R**
@@ -145,6 +162,10 @@ output:
 
 **Empirical gene enrichment analysis: enrichment_permutation.R**
 
-input: ```circRNA_target_other_diseases.xlsx```
+input: 
 
-output: ```permutation_17categories_100000out.xlsx```
+       circRNA_target_other_diseases.xlsx
+
+output: 
+
+       permutation_17categories_100000out.xlsx
