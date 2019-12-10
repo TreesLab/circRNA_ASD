@@ -19,7 +19,7 @@ We performed knockdown circARID1A, overexpressed circARID1A and miR-204-3p in Re
 
 
 ---
-**circRNA-miRNA-mRNA regulation**
+**circRNA-miRNA-mRNA regulation** (R code)
 
 All programming scripts used in this study were gathered in ASD_circ_R_codes.Rproj repository. The input data for R scripts can be found in input or output folder. The ouput data from R scripts can be found in ouput folder. There are three main processes in our analyses. 
 
@@ -33,7 +33,7 @@ All programming scripts used in this study were gathered in ASD_circ_R_codes.Rpr
 
 ---
 
-**Network graphics Cytoscape** : (shell code)
+**Network graphics Cytoscape** (shell code)
 
     
    to generate the up-regualted circRNA network (input files: up-node.txt and up-edge.txt)
