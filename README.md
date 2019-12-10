@@ -16,9 +16,9 @@ Chen et al.
 | Microarray_circARID1A_miR204-3p.xlsx | We performed knockdown circARID1A, overexpressed circARID1A and miR-204-3p in ReNcell, independently. The 22,480 gene expression changes were exmined by microarray analysis. The microarray result was used to screen gene expression changes by circARID1A and miR-204-3p regulation. |
 
 
-
-
 ---
+**circRNA-miRNA-mRNA regulation**
+
 All programming scripts used in this study were gathered in ASD_circ_R_codes.Rproj repository. The input data for R scripts can be found in input or output folder. The ouput data from R scripts can be found in ouput folder. There are three main processes in our analyses. 
 
 **Step1** : to detect DE-circRNAs by linear mixed effect (LME) model
@@ -27,11 +27,11 @@ All programming scripts used in this study were gathered in ASD_circ_R_codes.Rpr
 
 **Step3** : to calculate the correlation among circRNAs, microRNAs, and mRNAs
 
-**Empirical gene enrichment analysis** : SFARI gene enrichment of circRNA-miRNA-mRNA interaction (Fig. 3B)  
+**Empirical gene enrichment analysis** : to perform gene enrichment analysis and permuation test on targeted genes under circRNA-miRNA-mRNA interaction (Fig. 3B)  
 
 ---
 
-**Network graphics Cytoscape** : using Cytoscape tool (shell code)
+**Network graphics Cytoscape** : (shell code)
 
     
    to generate the up-regualted circRNA network (input files: up-node.txt and up-edge.txt)
