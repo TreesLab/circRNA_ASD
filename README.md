@@ -4,11 +4,6 @@ Chen et al.
 ---
 **Data produced in this study** 
 
-| Proceesed file | Description |
-|---|--- |
-| Microarray_circARID1A_miR204-3p.xlsx | We performed knockdown circARID1A, overexpressed circARID1A and miR-204-3p in ReNcell, independently. The gene expression changes were exmined by microarray analysis. The microarray result was used to screen 22,480 genes by circARID1A and miR-204-3p regulation. |
-
-
 |Raw data| Description|
 |---|---|
 | ReN_KB_circARID1A.CEL.rar| knockdown circARID1A|
@@ -17,6 +12,10 @@ Chen et al.
 | ReN_OE_circARID1A_NC.CEL.rar | control for overexpressed circARID1A |
 | ReN_OE_miR-204-3p.CEL.rar | overexpressed miR-204-3p |
 | ReN_OE_miR-204-3p_NC.CEL.rar | control for overexpressed miR-204-3p | 
+| **Proceesed file** | **Description** |
+| Microarray_circARID1A_miR204-3p.xlsx | We performed knockdown circARID1A, overexpressed circARID1A and miR-204-3p in ReNcell, independently. The gene expression changes were exmined by microarray analysis. The microarray result was used to screen 22,480 genes by circARID1A and miR-204-3p regulation. |
+
+
 
 
 ---
