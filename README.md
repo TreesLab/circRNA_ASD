@@ -18,10 +18,23 @@ All programming scripts used in this study were gathered in ASD_circ_R_codes.Rpr
 
 **Step3** : to calculate the correlation among circRNAs, microRNAs, and mRNAs
 
-**Empirical gene enrichment analysis** : SFARI gene enrichment of circRNA-miRNA-mRNA interaction (Fig. 3B)     
+**Empirical gene enrichment analysis** : SFARI gene enrichment of circRNA-miRNA-mRNA interaction (Fig. 3B)  
 
 ---
-Details of the above steps: 
+
+**Network graphics** : to apply Cytoscape tool (shell code)
+    
+   to generate the up-regualted circRNA network (input files: up-node.txt and up-edge.xt)
+   
+     $./run-up.sh > up.xml 
+     
+   to generate the down-regulated circRNA network (input files: down-node.txt and down-edge.txt)
+   
+     $./run-down.sh > down.xml
+     
+
+---
+Details of the ASD_circ_R_codes.Rproj: 
 
 **Step1_lme_run.R**
 
