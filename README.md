@@ -44,7 +44,7 @@ All programming scripts used in this study were gathered in ASD_circ_R_codes.Rpr
    
      $./run-down.sh > down.xml
      
-The output files (up.xml and down.xml) can be open via Cytoscape (httep://cytoscape.org/)
+The output file (up.xml or down.xml) can be open via Cytoscape (httep://cytoscape.org/)
 
 by click : File -> Import -> Network -> File -> Select "up.xml" or "down.xml".
  
