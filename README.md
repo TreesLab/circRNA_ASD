@@ -91,7 +91,7 @@ output: ```DEcircRNA_mRNA_spearman.xlsx```
 
 input: 
  
-      1) circRNA expression (circRNa1060_73s_RPM.txt) 
+      1) circRNA expression (circRNA1060_73s_RPM.txt) 
       2) mRNA expreesion (73s_normalized_miRNA_targetG_new.transpose) 
       3) circ-miRNA-mRNA relation (mi-ci_sig_InModules_short.txt)
 
