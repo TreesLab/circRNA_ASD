@@ -34,7 +34,7 @@ All programming scripts used in this study were gathered in ASD_circ_R_codes.Rpr
 
 **Network graphics** : using Cytoscape tool (shell code)
     
-   to generate the up-regualted circRNA network (input files: up-node.txt and up-edge.xt)
+   to generate the up-regualted circRNA network (input files: up-node.txt and up-edge.txt)
    
      $./run-up.sh > up.xml 
      
