@@ -23,7 +23,16 @@ Details of the above steps:
 
 **Step1_lme_run.R**
 
-input: ```1) circRNA expression of 1060 events 2) host gene ENSG ID of 1060 circRNAs 3) characters of 134 individuals 4) mRNA expression of 134 individuals```
+input: 
+
+          1) circRNA expression of 1060 events (circ1060_datRPM_134s.txt)
+ 
+          2) host gene ENSG ID of 1060 circRNAs (circ1060_ENSG.txt) 
+          
+          3) characters of 134 individuals (datTraits_134s.txt) 
+          
+          4) mRNA expression of 134 individuals (datExpr_134s.txt)
+    
 
 ouput: ```circ1060_DEG_Diagnosis_134s.csv```
 
@@ -37,42 +46,69 @@ output: ```circRNA_miRNA_relation.xlsx```
 
 **Step2.2_Relation_circRNA-miRNA-mRNA.R**
 
-input: ```circRNA_miRNA_relation.xlsx and miRNA target genes (Supplemental_Table S4_targets_of_58miRNAs.xlsx)```
-
+input: 
+      
+      1) circRNA_miRNA_relation.xlsx
+      2) miRNA target genes (Supplemental_Table S4_targets_of_58miRNAs.xlsx)
+    
 output: ```circ_miRNA_mRNA_relation.xlsx and circ_miRNA_mRNA_relation_short.xlsx```
 
 
 **Step3.1_Correlation_circRNA-miRNA.R**
 
-input: ```circRNA and miRNA expreesion, circ_miRNA_mRNA_relation_short.xlsx```
+input: 
+
+     1) circRNA expression (circ1060_datRPM_73s.txt; circ60_indiv73.csv)
+     3) miRNA expression (miRNA699_73s_exp.txt; miRNA58_indiv73.csv)
+     2) circ_miRNA_mRNA_relation_short.xlsx
+     
 
 ouput: ```circRNA_mRNA_spearman.xlsx```
 
 
 **Step3.2_Correlation_miRNA-mRNA.R**
 
-input: ```miRNA and mRNA expression, circ_miRNA_mRNA_relation_short.xlsx```
+input: 
+
+     1) miRNA expression (miRNA58_indiv73.csv)
+     2) mRNA expression (73s_normalized_log2_FPKM_miRNA_targetG_new.transpose)
+     3) miRNA_mRNA_relation (58miRNA_targets_ENSG.txt)
 
 output: ```miRNA_mRNA_spearman.xlsx```
 
 
 **Step3.3.1_Correlation_DEcircRNA-mRNA.R**
 
-input: ```DEcircRNA and mRNA expreesion, circ_miRNA_mRNA_relation_short.xlsx```
+input: 
+ 
+     1) circRNA expreesion (circ60_indiv73.txt)
+     2) mRNA expression (73s_normalized_miRNA_targetG_new.transpose)
 
-output: ```DEcircRNA_mRNA_spearm.xlsx```
+output: ```DEcircRNA_mRNA_spearman.xlsx```
 
 
 **Step3.3.2_Correlation_module_circRNA-mRNA.R**
 
-input: ```module circRNA and mRNA expreesion, circ_miRNA_mRNA_relation_short.xlsx```
+input: 
+ 
+      1) circRNA expression (circRNa1060_73s_RPM.txt) 
+      2) mRNA expreesion (73s_normalized_miRNA_targetG_new.transpose) 
+      3) circ-miRNA-mRNA relation (mi-ci_sig_InModules_short.txt)
 
-output: ```module_circRNA_mRNA_spearman.xlsx```
+output: ```Module_circRNA_mRNA_spearman.xlsx```
 
 
 **Step3.4_Correlation_circRNA-miRNA-mRNA.R**
 
-input: ```circRNA-miRNA, miRNA-mRNA and circRNA-mRNA correlation testing results```
+input: 
 
-output: ```circRNA_miRNA_mRNA_spearman.xlsx```
+       1) circRNA-miRNA correlation (circRNA_miRNA_spearman.xlsx)
+       2) miRNA-mRNA correlation (miRNA_mRNA_sparman.xlsx)
+       3) circRNA-mRNA correlation (DEcirc_mRNA_spearman.xlsx;Module_circ_mRNA_spearman.xlsx)
+       4) circ-miRNA-mRNA relation (circ_miRNA_mRNA_relation.xlsx; 58miRNA_target_ENSG.txt)
+
+output: 
+
+       1) circRNA_miRNA_mRNA_spearman.xlsx
+       2) sponge_circRNA_miRNA_mRNA_spearman.xlsx
 
