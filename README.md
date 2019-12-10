@@ -133,7 +133,7 @@ output:
        2) sponge_circRNA_miRNA_mRNA_spearman.xlsx
 
 
-**Empirical gene enrichment analysis: enrichment_permuation.R**
+**Empirical gene enrichment analysis: enrichment_permutation.R**
 
 input: ```circRNA_target_other_diseases.xlsx```
 
