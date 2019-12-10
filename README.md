@@ -2,7 +2,7 @@
 Chen et al. 
 
 ---
-**Data produced in this study** 
+**Microarray data generated in this study** 
 
 |Raw data| Description|
 |---|---|
@@ -31,7 +31,8 @@ All programming scripts used in this study were gathered in ASD_circ_R_codes.Rpr
 
 ---
 
-**Network graphics** : using Cytoscape tool (shell code)
+**Network graphics Cytoscape** : using Cytoscape tool (shell code)
+
     
    to generate the up-regualted circRNA network (input files: up-node.txt and up-edge.txt)
    
