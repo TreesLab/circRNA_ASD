@@ -18,6 +18,8 @@ All programming scripts used in this study were gathered in ASD_circ_R_codes.Rpr
 
 **Step3** : to calculate the correlation among circRNAs, microRNAs, and mRNAs
 
+**Empirical gene enrichment analysis** : SFARI gene enrichment of circRNA-miRNA-mRNA interaction (Fig. 3B)     
+
 ---
 Details of the above steps: 
 
@@ -112,3 +114,8 @@ output:
        1) circRNA_miRNA_mRNA_spearman.xlsx
        2) sponge_circRNA_miRNA_mRNA_spearman.xlsx
 
+
+**Empirical gene enrichment analysis: enrichment_permuation.R**
+
+input: ```circRNA_target_other_diseases.xlsx```
+output: ```permutation_17categories_100000out.xlsx```
