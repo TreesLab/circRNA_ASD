@@ -72,7 +72,7 @@ input:
 
      1) miRNA expression (miRNA58_indiv73.csv)
      2) mRNA expression (73s_normalized_log2_FPKM_miRNA_targetG_new.transpose)
-     3) miRNA_mRNA_relation (58miRNA_targets_ENSG.txt)
+     3) miRNA-mRNA relation (58miRNA_targets_ENSG.txt)
 
 output: ```miRNA_mRNA_spearman.xlsx```
 
