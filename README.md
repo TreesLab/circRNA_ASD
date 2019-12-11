@@ -21,7 +21,7 @@ We performed knockdown circARID1A, overexpressed circARID1A and miR-204-3p in Re
 ---
 **circRNA-miRNA-mRNA regulation** (R code)
 
-All programming scripts used in this study were gathered in ASD_circ_R_codes.Rproj repository. The input data for R scripts can be found in input or output folder. The ouput data from R scripts can be found in ouput folder. There are three main processes in our analyses. 
+All programming scripts used in this study were gathered in ASD_circ_R_codes.Rproj repository. The input data for R scripts can be found in input or output folder. The ouput data from R scripts can be found in ouput folder. There are four main processes in our analyses. 
 
 **Step1** : to detect DE-circRNAs by linear mixed effect (LME) model
 
