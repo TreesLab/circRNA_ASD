@@ -114,7 +114,7 @@ ouput:
 input: 
 
      1) miRNA expression (miRNA58_indiv73.csv)
-     2) mRNA expression (73s_normalized_log2_FPKM_miRNA_targetG_new.transpose)
+     2) mRNA expression (73s_normalized_log2_FPKM_miRNA_targetG.transpose)
      3) miRNA-mRNA relation (58miRNA_targets_ENSG.txt)
 
 output: 
@@ -127,11 +127,11 @@ output:
 input: 
  
      1) circRNA expreesion (circ60_indiv73.txt)
-     2) mRNA expression (73s_normalized_miRNA_targetG_new.transpose)
+     2) mRNA expression (73s_normalized_miRNA_targetG.transpose)
 
 output: 
 
-     DEcircRNA_mRNA_spearman.xlsx
+     DEcircRNA_mRNA_spearman.txt
 
 
 **Step3.3.2_Correlation_module_circRNA-mRNA.R**
@@ -144,7 +144,7 @@ input:
 
 output: 
 
-      Module_circRNA_mRNA_spearman.xlsx
+      Module_circRNA_mRNA_spearman.txt
 
 
 **Step3.4_Correlation_circRNA-miRNA-mRNA.R**
@@ -153,7 +153,7 @@ input:
 
        1) circRNA-miRNA correlation (circRNA_miRNA_spearman.xlsx)
        2) miRNA-mRNA correlation (miRNA_mRNA_spearman.xlsx)
-       3) circRNA-mRNA correlation (DEcirc_mRNA_spearman.xlsx;Module_circ_mRNA_spearman.xlsx)
+       3) circRNA-mRNA correlation (DEcirc_mRNA_spearman.txt;Module_circ_mRNA_spearman.txt)
        4) circ-miRNA-mRNA relation (circ_miRNA_mRNA_relation.xlsx; 58miRNA_target_ENSG.txt)
 
 output: 
