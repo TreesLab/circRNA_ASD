@@ -171,3 +171,12 @@ input:
 output: 
 
        permutation_17categories_100000out.xlsx
+       
+----
+ **Notes**
+ Two files cannnot be uploaded to github due to over github upload file size limit (50 Mb).
+ Users can download them from our FTP (ftp://treeslab1.genomics.sinica.edu.tw/treeslabtools/circRNA_ASD).
+      
+      1) input/datExpr_134s.txt
+      2) ouput/DEcirc_mRNA_spearman.txt
+      
