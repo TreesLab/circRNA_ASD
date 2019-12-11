@@ -1,0 +1,13 @@
+### How to Run the scripts:
+
+Input files: up-node.txt, up-edge.txt, down-node.txt, and down-edge.txt
+
+1. Generate the up-regulated circRNA networks
+ $ ./run-up.sh > up.xml
+
+2. Generate the down-regulated circRNA networks
+ $ ./run-down.sh > down.xml
+
+The output files: up.xml, and down.xml
+These output files can be open via Cytoscape software (https://cytoscape.org/)
+by click: File -> Import -> Network -> File -> Select "up.xml or down.xml"
