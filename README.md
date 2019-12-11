@@ -106,7 +106,7 @@ input:
 
 ouput: 
 
-     circRNA_mRNA_spearman.xlsx
+     circRNA_miRNA_spearman.xlsx
 
 
 **Step3.2_Correlation_miRNA-mRNA.R**
