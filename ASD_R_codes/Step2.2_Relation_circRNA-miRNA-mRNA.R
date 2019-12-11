@@ -13,8 +13,17 @@ circ_mi <- read_excel("output/circRNA_miRNA_relation.xlsx")
 mi_m_known = read_excel("input/Supplemental_Table S4_targets_of_58miRNAs_new.xlsx", sheet="37miRNAs vs targets")
 mi_m_novel = read_excel("input/Supplemental_Table S4_targets_of_58miRNAs_new.xlsx", sheet="21novel_miRNAs vs targets")
 
-#############################################################################################################################
+########################################### data format reform ##################################################################################
+mi_m_known <- mi_m_known %>%  
+  mutate(miRNA_ID=str_replace_all(miRNA_ID, "\\.", "-")) %>% 
+  mutate(miRNA_ID=str_replace_all(miRNA_ID, "_", "-"))
 
+mi_m_novel <- mi_m_novel %>%  
+  mutate(miRNA_ID=str_replace_all(miRNA_ID, "\\.", "-")) %>% 
+  mutate(miRNA_ID=str_replace_all(miRNA_ID, "_", "-"))
+
+
+#################################################################################################
 circ_mi_m_known <- circ_mi %>% 
   left_join(mi_m_known, by=c("miRNAID"="miRNA_ID")) %>% 
   add_column(miRNA_type="known") %>% 
@@ -33,9 +42,10 @@ circ_mi_m_novel <- circ_mi %>%
              `experimentally supported (C or E or F)`=NA)
 
 circ_mi_m_relation <- rbind(circ_mi_m_known, circ_mi_m_novel) %>% 
-  select(circRNAID, Up_Down_circRNA,DEcircRNA, module_circRNA, miRNAID, DEmiRNA, CircMi_targetNum,
+  select(circRNAID, Up_Down_circRNA,DEcircRNA, module_circRNA, miRNAID, DEmiRNA, module_DEmiRNA, CircMi_targetNum,
          miRNA_type, Gene_Symbol, ENSG_ID, everything()) %>% 
   filter(Gene_Symbol!="NA") 
+
 
 
 
@@ -43,8 +53,7 @@ circ_mi_m_relation_short <- circ_mi_m_relation %>%
   select(circRNAID, Up_Down_circRNA, DEcircRNA, module_circRNA, miRNAID, ENSG_ID) %>% 
   unique() 
   
-
-####################################  output  ######################################  
+##########################################################################  
 write_xlsx(circ_mi_m_relation,"output/circ_miRNA_mRNA_relation.xlsx")
 write_xlsx(circ_mi_m_relation_short,"output/circ_miRNA_mRNA_relation_short.xlsx")
 

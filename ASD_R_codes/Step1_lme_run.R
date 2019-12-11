@@ -8,7 +8,6 @@ library(data.table)
 
 rm(list=ls(all=TRUE))
 setDTthreads(threads = 4)
-
 ############################################## input files ################################################################################
 # input: circRNA expression of 1060 events
 datRPM <- read.table("input/circ1060_datRPM_134s.txt", sep="\t", header=T)
@@ -20,9 +19,9 @@ ENSG_circID <- read.table("input/circ1060_ENSG.txt", sep="\t", header=T)
 datTraits <- read.table("input/datTraits_134s.txt", sep="\t", header=TRUE)
 
 # input: mRNA expression of 134 individuals
+unzip("input/datExpr_134s.zip", exdir = "input")
 datExpr <- data.table(fread("input/datExpr_134s.txt"))
 
-#############################################reformat inputa ###########################################################################
 # define data format of input files
 datRPM <- as_tibble(datRPM)
 datTraits <- as_tibble(datTraits)
@@ -100,7 +99,7 @@ for (i in 1:numCirc){
 
 DE_Diagnosis$BH_adjPval = p.adjust(DE_Diagnosis$Pval, method="BH", n=nrow(DE_Diagnosis))
 
-##################################################### ouput ####################################################################################
+################################################################################################################################################
 # write out the LME analysis result in CSV format
 
 write_csv(DE_Diagnosis, "output/circ1060_DEG_Diagnosis_134s.csv")

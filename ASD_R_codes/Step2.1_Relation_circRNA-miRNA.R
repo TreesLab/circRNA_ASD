@@ -9,14 +9,12 @@ library(writexl)
 rm(list=ls(all=TRUE))
 ################################  input files #########################################################
 
-## miRNAs targeted by  DEcircRNAs
-circMiR = read_excel("input/RNA22_circRNA_miRNA_module.xlsx", sheet="60circ_58mi")
 ## DEcircRNAs
+circMiR = read_excel("input/RNA22_circRNA_miRNA_module.xlsx", sheet="60circ_58mi")
 circDE = read_excel("input/RNA22_circRNA_miRNA_module.xlsx", sheet="60circ_DE")
 
-## miRNAs targeted by module circRNA
-module_circMiR = read_excel("input/RNA22_circRNA_miRNA_module.xlsx", sheet="circ_mi_Modules")
 ## module circRNA
+module_circMiR = read_excel("input/RNA22_circRNA_miRNA_module.xlsx", sheet="circ_mi_Modules")
 module_circDE = read_excel("input/RNA22_circRNA_miRNA_module.xlsx", sheet="circModules_DE")
 
 #######################################################################################################
@@ -37,9 +35,9 @@ circMiR.list <- circMiR.list %>%
 
 
 module_circMiR.bs <- module_circMiR %>% 
-  select(-DEmiRNA)
+  select(-module_DEmiRNA)
 module_circMiR.DEmiRNA <- module_circMiR %>% 
-  select(miRNAID, DEmiRNA)
+  select(miRNAID, module_DEmiRNA)
 
 module_circMiR.list <- gather(module_circMiR.bs, key = "circRNAID", value = "targetNum", -miRNAID) %>% 
   filter(targetNum > 0)
@@ -53,17 +51,26 @@ module_circMiR.list <- module_circMiR.list %>%
   left_join(module_circDE, by="circRNAID")
 
 circMiR.list.short <- circMiR.list %>% 
-  select(circRNAID, miRNAID, targetNum, Up_Down_circRNA, DEmiRNA)
+  select(circRNAID, miRNAID, targetNum, Up_Down_circRNA)
 
 circMiR.list.short2 <- circMiR.list %>% 
   select(circRNAID, DEcircRNA) %>% 
   unique()
 
+circMiR.list.short3 <- circMiR.list %>% 
+  select(miRNAID, DEmiRNA) %>% 
+  unique()
+
+
 module_circMiR.list.short <- module_circMiR.list %>% 
-  select(circRNAID, miRNAID, targetNum, Up_Down_circRNA, DEmiRNA)
+  select(circRNAID, miRNAID, targetNum, Up_Down_circRNA)
 
 module_circMiR.list.short2 <- module_circMiR.list %>% 
   select(circRNAID, module_circRNA) %>% 
+  unique()
+
+module_circMiR.list.short3 <- module_circMiR.list %>% 
+  select(miRNAID, module_DEmiRNA) %>% 
   unique()
 
 circMi_relation <- 
@@ -71,11 +78,14 @@ circMi_relation <-
   unique() %>% 
   left_join(circMiR.list.short2, by=c("circRNAID"="circRNAID")) %>% 
   left_join(module_circMiR.list.short2, by=c("circRNAID"="circRNAID")) %>% 
+  left_join(circMiR.list.short3, by=c("miRNAID"="miRNAID")) %>% 
+  left_join(module_circMiR.list.short3, by=c("miRNAID"="miRNAID")) %>%
   mutate(miRNAID=str_replace_all(miRNAID, "_", "-")) %>% 
-  select(circRNAID, Up_Down_circRNA, DEcircRNA, module_circRNA, miRNAID, DEmiRNA, targetNum) %>% 
-  rename(CircMi_targetNum=targetNum)
+  select(circRNAID, Up_Down_circRNA, DEcircRNA, module_circRNA, miRNAID, DEmiRNA, module_DEmiRNA, targetNum) %>% 
+  rename(CircMi_targetNum=targetNum) 
+  
 
-###################################  output  ######################################################
+###########################################################################################################################
 write_xlsx(circMi_relation, "output/circRNA_miRNA_relation.xlsx")
 
 

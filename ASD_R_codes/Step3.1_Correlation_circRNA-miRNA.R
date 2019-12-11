@@ -81,7 +81,7 @@ for(i in 1:circ_mi_n){
 ############################## module_circRNA ########################################
 module_circ_mi <- CMM %>%
   filter(str_detect(module_circRNA, '_')) %>% 
-  filter(is.na(DEcircRNA)) %>% 
+  #filter(is.na(DEcircRNA)) %>% 
   select(circRNAID, miRNAID) %>% 
   unique()
 
@@ -114,11 +114,11 @@ for(i in 1:module_circ_mi_n){
   
   module_circ_mi_spearman <- rbind(module_circ_mi_spearman, circ_mi_One)
 }
-
+#######################################################################################################
 circRNA_miRNA_spearman <- rbind(circ_mi_spearman, module_circ_mi_spearman) %>% 
   unique()
 
-################################  output  ##########################################################################
+############################################################################################################
 write_xlsx(circRNA_miRNA_spearman,"output/circRNA_miRNA_spearman.xlsx")
 
 

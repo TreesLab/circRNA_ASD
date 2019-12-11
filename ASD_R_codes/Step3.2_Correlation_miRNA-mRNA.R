@@ -8,13 +8,10 @@ library(writexl)
 
 rm(list=ls(all=TRUE))
 ############################# input files #########################################
-
 miRNA = read.csv("input/miRNA58_indiv73.csv")
-mRNA = read.table("input/73s_normalized_log2_FPKM_miRNA_targetG_new.transpose", header=TRUE, row.names=1)
-CMM <- read_excel("output/circ_miRNA_mRNA_relation_short.xlsx", col_types=c("text"))
-
+mRNA = read.table("input/73s_normalized_log2_FPKM_miRNA_targetG.transpose", header=TRUE, row.names=1)
+addMiM <- read.csv("input/58miRNA_targets_ENSG.txt", sep="", header=TRUE,  colClasses = "character")
 ############################ reform data format ######################################################
-
 miRNA <- miRNA %>% 
          as_tibble() %>% 
          mutate(FC=as.character(FC)) %>% 
@@ -29,46 +26,17 @@ mRNA <- mRNA %>%
         as_tibble() %>% 
         rename(Sample.ID=Indiv2)
 
-###########################################################################################################
-
-mi_m <- CMM %>% 
-  select(miRNAID, ENSG_ID) %>% 
+mi_m <- addMiM %>% 
+  as_tibble() %>% 
+  mutate(ID=str_replace_all(ID, "\\.", "-")) %>% 
+  select(ID, ENSG_ID) %>% 
+  rename(miRNAID=ID) %>% 
   unique()
-
-#circUp_miDown_m <- CMM %>% 
-#  select(circRNAID, DEcircRNA, miRNA_ID, DEmiRNA ,ENSG_ID) %>% 
-#  filter(str_detect(DEcircRNA, 'up')) %>% 
-#  filter(str_detect(DEmiRNA, 'down')) %>% 
-#  unique()
-
-#circDown_miUp_m <- CMM %>% 
-#  select(circRNAID, DEcircRNA, miRNA_ID, DEmiRNA ,ENSG_ID) %>% 
-#  filter(str_detect(DEcircRNA, 'down')) %>% 
-#  filter(str_detect(DEmiRNA, 'up')) %>% 
-#  unique()
-
-#circ_mi_m <- rbind(circUp_miDown_m, circDown_miUp_m) %>% 
-#  unique()
-
-#mi_m <- circ_mi_m %>% 
-#  select(miRNA_ID, ENSG_ID) %>% 
-#  unique() %>% 
-#  mutate(miRNAID=str_replace_all(miRNA_ID, "-", ".")) %>% 
-#  select(miRNAID, ENSG_ID)
-
-#circmi_sigless <- circmi %>% 
-#  select(miRNAID) %>% 
-#  unique()
-
-
-#mi_m <- circmi_sigless %>% 
-#  left_join(mi_m, by="miRNAID")
 
 mi_m_spearman <- c()
 mi_m_n <- dim(mi_m)[1]
 
 for(i in 1:mi_m_n){
-  
   print(i)
   mi_m_One <- mi_m[i,]
   
