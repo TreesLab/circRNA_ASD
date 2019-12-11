@@ -175,7 +175,7 @@ output:
 ----
  **Notes**
  
- Two files cannnot be uploaded to github due to over github upload file size limit (50 Mb).
+ Two files cannnot be found in the circRNA_ASD GitHub repository due to over GitHub upload size limit (50 Mb).
  Users can download them from our FTP (ftp://treeslab1.genomics.sinica.edu.tw/treeslabtools/circRNA_ASD).
       
       1) input/datExpr_134s.txt
