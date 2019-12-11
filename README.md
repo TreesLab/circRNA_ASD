@@ -173,7 +173,7 @@ output:
        permutation_17categories_100000out.xlsx
        
 ----
- **Notes**
+ **Miscellaneous **
  
  Two files cannnot be found in the circRNA_ASD GitHub repository due to over GitHub upload size limit (50 Mb).
  Users can download them from our FTP (ftp://treeslab1.genomics.sinica.edu.tw/treeslabtools/circRNA_ASD).
