@@ -4,7 +4,7 @@ Chen et al.
 ---
 **Microarray data generated in this study** 
 
-We performed knocked down circARID1A, overexpressed circARID1A and miR-204-3p in ReNcell, independently. The 22,480 gene expression changes were examined by microarray analysis. The microarray result was used to screen gene expression changes by circARID1A and miR-204-3p regulation.
+We performed knockdown circARID1A, overexpressed circARID1A and overexpressed miR-204-3p in ReNcell, independently. The 22,480 gene expression changes were examined by microarray analysis. The microarray result was used to screen gene expression changes by circARID1A and miR-204-3p regulation.
 
 |Raw data| Description|
 |---|---|
