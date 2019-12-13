@@ -153,7 +153,7 @@ input:
 
        1) circRNA-miRNA correlation (circRNA_miRNA_spearman.xlsx)
        2) miRNA-mRNA correlation (miRNA_mRNA_spearman.xlsx)
-       3) circRNA-mRNA correlation (DEcirc_mRNA_spearman.txt;Module_circ_mRNA_spearman.txt)
+       3) circRNA-mRNA correlation (DEcirc_mRNA_spearman.txt; Module_circ_mRNA_spearman.txt)
        4) circ-miRNA-mRNA relation (circ_miRNA_mRNA_relation.xlsx; 58miRNA_target_ENSG.txt)
 
 output: 
