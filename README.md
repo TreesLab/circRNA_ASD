@@ -8,8 +8,8 @@ We performed knockdown circARID1A, overexpressed circARID1A and overexpressed mi
 
 |Raw data| Description|
 |---|---|
-| ReN_KB_circARID1A.CEL.rar| knocked down circARID1A|
-| ReN_KB_circARID1A_NC.CEL.rar | negative control for knocked down circARID1A |
+| ReN_KB_circARID1A.CEL.rar| knockdown circARID1A|
+| ReN_KB_circARID1A_NC.CEL.rar | negative control for knockdown circARID1A |
 | ReN_OE_circARID1A.CEL.rar | overexpressed circARID1A |
 | ReN_OE_circARID1A_NC.CEL.rar | negative control for overexpressed circARID1A |
 | ReN_OE_miR-204-3p.CEL.rar | overexpressed miR-204-3p |
