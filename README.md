@@ -4,16 +4,16 @@ Chen et al.
 ---
 **Microarray data generated in this study** 
 
-We performed knockdown circARID1A, overexpressed circARID1A and overexpressed miR-204-3p in ReNcell, independently. The 22,480 gene expression changes were examined by microarray analysis. The microarray result was used to screen gene expression changes by circARID1A and miR-204-3p regulation.
+We performed knockdown of circARID1A, overexpression of circARID1A and overexpression of miR-204-3p in ReNcell, independently. The 22,480 gene expression changes were examined by microarray analysis. The microarray result was used to screen gene expression changes by circARID1A and miR-204-3p regulation.
 
 |Raw data| Description|
 |---|---|
-| ReN_KB_circARID1A.CEL.rar| knockdown circARID1A|
-| ReN_KB_circARID1A_NC.CEL.rar | negative control for knockdown circARID1A |
-| ReN_OE_circARID1A.CEL.rar | overexpressed circARID1A |
-| ReN_OE_circARID1A_NC.CEL.rar | negative control for overexpressed circARID1A |
-| ReN_OE_miR-204-3p.CEL.rar | overexpressed miR-204-3p |
-| ReN_OE_miR-204-3p_NC.CEL.rar | negative control for overexpressed miR-204-3p | 
+| ReN_KB_circARID1A.CEL.rar| knockdown of circARID1A|
+| ReN_KB_circARID1A_NC.CEL.rar | negative control for knockdown of circARID1A |
+| ReN_OE_circARID1A.CEL.rar | overexpression of circARID1A |
+| ReN_OE_circARID1A_NC.CEL.rar | negative control for overexpression of circARID1A |
+| ReN_OE_miR-204-3p.CEL.rar | overexpression of miR-204-3p |
+| ReN_OE_miR-204-3p_NC.CEL.rar | negative control for overexpression of  miR-204-3p | 
 | **Processed data** | **Description** |
 | Microarray_circARID1A_miR204-3p.xlsx | The log2 fold change is calculated to compare gene expressions between the treatment an its negative control  |
 
