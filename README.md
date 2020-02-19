@@ -17,7 +17,7 @@ We performed knockdown of circARID1A, overexpression of circARID1A and overexpre
 | **Processed data** | **Description** |
 | Microarray_circARID1A_miR204-3p.xlsx | The log2 fold change is calculated to compare gene expressions between the treatment an its negative control. The gene expression was calculated by the median value of the numerous probes in the same gene.  |
 
-All the raw expreesion profiling by array along with processed data are deposited into NCBI GEO database with accession number GSE145417.
+All the raw expreesion profiling by array are deposited into NCBI GEO database with accession number GSE145417.
 
 ---
 **circRNA-miRNA-mRNA regulation** (R code)
