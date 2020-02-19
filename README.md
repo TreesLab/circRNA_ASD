@@ -16,7 +16,7 @@ We performed knockdown of circARID1A, overexpression of circARID1A and overexpre
 | ReN_OE_miR-204-3p.CEL.rar | overexpression of miR-204-3p |
 | ReN_OE_miR-204-3p_NC.CEL.rar | negative control for overexpression of  miR-204-3p | 
 | **Processed data** | **Description** |
-| Microarray_circARID1A_miR204-3p.xlsx | The log2 fold change is calculated to compare gene expressions between the treatment an its negative control. The gene expression was calculated by the median value of the numerous probes in the same gene.  |
+| Microarray_circARID1A_miR204-3p.xlsx | The log2 fold change is calculated to compare gene expressions between the treatment and its negative control. The gene expression was calculated by the median value of the numerous probes in the same gene.  |
 
 
 ---
