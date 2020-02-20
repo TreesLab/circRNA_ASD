@@ -22,26 +22,26 @@ We performed knockdown of circARID1A, overexpression of circARID1A and overexpre
 ---
 **circRNA-miRNA-mRNA regulation** (R code)
 
-All programming scripts used in this study were gathered in ASD_R_codes.Rproj repository. The input data for R scripts can be found in input or output folder. The ouput data from R scripts can be found in ouput folder. There are four main processes in our analyses. 
+All programming scripts used in this study were gathered in ASD_R_codes repository. The input data for R scripts can be found in input or output folder. The ouput data from R scripts can be found in ouput folder. There are four main processes in our analyses. 
 
 **Step1** : to detect DE-circRNAs by linear mixed effect (LME) model
 
-**Step2** : to construct the circRNA-microRNA-mRNA relation
+**Step2** : to intergate the circRNA-microRNA-mRNA interactions according to the common miRNA targets of the circRNAs and mRNAs
 
 **Step3** : to calculate the correlation among circRNAs, microRNAs, and mRNAs
 
-**Empirical gene enrichment analysis** : to perform gene enrichment analysis and permuation test on targeted genes under circRNA-miRNA-mRNA interaction (Fig. 3B)  
+**Empirical gene enrichment analysis** : to perform gene enrichment analysis and permutation test on targeted genes of identified circRNA-miRNA-mRNA interaction (Fig. 3B)  
 
 ---
 
 **Network graphics Cytoscape** (shell code)
 
     
-   to generate the up-regualted circRNA network (input files: up-node.txt and up-edge.txt)
+   to generate the up-regualted circRNA network(Fig.3E) (input files: up-node.txt and up-edge.txt)
    
      $./run-up.sh > up.xml 
      
-   to generate the down-regulated circRNA network (input files: down-node.txt and down-edge.txt)
+   to generate the down-regulated circRNA network(Fig.S6 ) (input files: down-node.txt and down-edge.txt)
    
      $./run-down.sh > down.xml
      
@@ -67,7 +67,7 @@ input:
           4) mRNA expression of 134 individuals (datExpr_134s.txt)
     
 
-ouput: 
+output: 
 
           circ1060_DEG_Diagnosis_134s.csv
 
@@ -127,7 +127,7 @@ output:
 
 input: 
  
-     1) circRNA expreesion (circ60_indiv73.txt)
+     1) circRNA expresion (circ60_indiv73.txt)
      2) mRNA expression (73s_normalized_miRNA_targetG.transpose)
 
 output: 
