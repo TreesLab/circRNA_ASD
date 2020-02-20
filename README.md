@@ -3,6 +3,7 @@ Chen et al.
 
 ---
 **Microarray data generated in this study** 
+
 All the raw expression profiling by array are deposited into NCBI GEO database with accession number GSE145417.
 
 We performed knockdown of circARID1A, overexpression of circARID1A and overexpression of miR-204-3p in ReNcell, independently. The 22,480 gene expression changes were examined by microarray analysis. The microarray result was used to screen gene expression changes by circARID1A and miR-204-3p regulation.
