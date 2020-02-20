@@ -53,7 +53,7 @@ by click : File -> Import -> Network -> File -> Select "up.xml" or "down.xml".
 
 
 ---
-Details of the ASD_R_codes.Rproj: 
+Details of the ASD_R_codes: 
 
 **Step1_lme_run.R**
 
