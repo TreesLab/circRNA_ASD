@@ -151,7 +151,9 @@ Since the sizes of the files (datExpr_134s.txt and DEcirc_mRNA_spearman.txt) are
 ### 2. Network graphics Cytoscape (shell code)
 
 Two shell scripts:
+
 run-up.sh
+
 run-down.sh
 
 **2.1 generating the upregulated circRNA network (Figure 3E)**
