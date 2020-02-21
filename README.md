@@ -12,7 +12,7 @@ All scripts in this part were gathered in the ASD_R_codes folder. The results ca
 
 **Step1: detecting DE-circRNAs by a linear mixed effects (LME) model**
 
-One R script:Step1_lme_run.R
+One R script: Step1_lme_run.R
 
 **Step1_lme_run.R**
 
