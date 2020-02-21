@@ -12,9 +12,9 @@ All scripts in this part were gathered in the ASD_R_codes folder. The results ca
 
 **Step1: detecting DE-circRNAs by a linear mixed effects (LME) model**
 
-One R script: 
+One R script:Step1_lme_run.R
 
-Step1_lme_run.R
+**Step1_lme_run.R**
 
   Input:
 
@@ -32,10 +32,9 @@ Step1_lme_run.R
 Two R scripts: 
 
 Step2.1_Relation_circRNA-miRNA.R 
-
 Step2.2_Relation_circRNA-miRNA-mRNA.R
 
-Step2.1_Relation_circRNA-miRNA.R
+**Step2.1_Relation_circRNA-miRNA.R**
 
   Input:
    
@@ -45,7 +44,7 @@ Step2.1_Relation_circRNA-miRNA.R
    
         circRNA_miRNA_relation.xlsx
 
-Step2.2_Relation_circRNA-miRNA-mRNA.R
+**Step2.2_Relation_circRNA-miRNA-mRNA.R**
 
    Input:
    
@@ -71,7 +70,7 @@ Step3.3.2_Correlation_module_circRNA-mRNA.R
 
 Step3.4_Correlation_circRNA-miRNA-mRNA.R
 
-Step3.1_Correlation_circRNA-miRNA.R
+**Step3.1_Correlation_circRNA-miRNA.R**
 
   Input:
   
@@ -83,7 +82,7 @@ Step3.1_Correlation_circRNA-miRNA.R
    
         circRNA_miRNA_spearman.xlsx
 
-Step3.2_Correlation_miRNA-mRNA.R
+**Step3.2_Correlation_miRNA-mRNA.R**
 
    Input:
     
@@ -95,7 +94,7 @@ Step3.2_Correlation_miRNA-mRNA.R
    
         miRNA_mRNA_spearman.xlsx
 
-Step3.3.1_Correlation_DEcircRNA-mRNA.R
+**Step3.3.1_Correlation_DEcircRNA-mRNA.R**
 
    Input:
    
@@ -106,7 +105,7 @@ Step3.3.1_Correlation_DEcircRNA-mRNA.R
    
        DEcirc_mRNA_spearman.txt
 
-Step3.3.2_Correlation_module_circRNA-mRNA.R
+**Step3.3.2_Correlation_module_circRNA-mRNA.R**
 
    Input:
    
@@ -118,7 +117,7 @@ Step3.3.2_Correlation_module_circRNA-mRNA.R
    
        Module_circRNA_mRNA_spearman.txt
 
-Step3.4_Correlation_circRNA-miRNA-mRNA.R
+**Step3.4_Correlation_circRNA-miRNA-mRNA.R**
 
    Input:
    
@@ -136,7 +135,7 @@ Step3.4_Correlation_circRNA-miRNA-mRNA.R
 
 One R script: enrichment_permutation.R 
 
-enrichment_permutation.R
+**enrichment_permutation.R**
 
   Input:
   
