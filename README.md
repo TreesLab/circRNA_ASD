@@ -2,184 +2,166 @@
 Chen et al. 
 
 ---
-**Microarray data generated in this study** 
+The scripts used in this study include two parts: 
+1. Identification of DE-circRNAs and ASD-associated circRNA-miRNA-mRNA regulatory axes
+2. Visualization of the identified circRNA-miRNA-mRNA axes by Cytoscape
 
-All the raw expression profiling by array are deposited into NCBI GEO database with accession number GSE145417.
+**1. Identification of DE-circRNAs and ASD-associated circRNA-miRNA-mRNA regulatory axes (R code)**
 
-We performed knockdown of circARID1A, overexpression of circARID1A and overexpression of miR-204-3p in ReNcell, independently. The 22,480 gene expression changes were examined by microarray analysis. The microarray result was used to screen gene expression changes by circARID1A and miR-204-3p regulation.
+All scripts in this part were gathered in the ASD_R_codes folder. The results can be found in the output folder. This part contains four main steps:
 
-|Raw data| Description|
-|---|---|
-| ReN_KB_circARID1A.CEL.rar| knockdown of circARID1A|
-| ReN_KB_circARID1A_NC.CEL.rar | negative control for knockdown of circARID1A |
-| ReN_OE_circARID1A.CEL.rar | overexpression of circARID1A |
-| ReN_OE_circARID1A_NC.CEL.rar | negative control for overexpression of circARID1A |
-| ReN_OE_miR-204-3p.CEL.rar | overexpression of miR-204-3p |
-| ReN_OE_miR-204-3p_NC.CEL.rar | negative control for overexpression of  miR-204-3p | 
-| **Processed data** | **Description** |
-| Microarray_circARID1A_miR204-3p.xlsx | The log2 fold change is calculated to compare gene expressions between the treatment and its negative control. The gene expression was calculated by the median value of a number of probes in the same gene.  |
+**Step1: detecting DE-circRNAs by a linear mixed effects (LME) model**
 
+One R script: Step1_lme_run.R
 
----
-**circRNA-miRNA-mRNA regulation** (R code)
+  Input:
 
-All programming scripts used in this study were gathered in ASD_R_codes repository. The input data for R scripts can be found in input or output folder. The ouput data from R scripts can be found in ouput folder. There are four main processes in our analyses. 
+        (1) circRNA expression of the 1,060 events (circ1060_datRPM_134s.txt)
+        (2) the mapping table of the host gene IDs vs. the 1,060 circRNAs (circ1060_ENSG.txt) 
+        (3) features of the 134 samples examined (datTraits_134s.txt) 
+        (4) expression of all Ensembl-annotated genes in 134 samples (datExpr_134s.txt)
+        
+  Output:
 
-**Step1** : to detect DE-circRNAs by linear mixed effect (LME) model
+        circ1060_DEG_Diagnosis_134s.csv
 
-**Step2** : to intergate the circRNA-microRNA-mRNA interactions according to the common miRNA targets of the circRNAs and mRNAs
+**Step2: identifying circRNA-miRNA-mRNA regulatory axes by integrating the circRNA-miRNA interactions with the miRNA-mRNA interactions according to the common miRNA target sites of the circRNAs and mRNAs.**
 
-**Step3** : to calculate the correlation among circRNAs, microRNAs, and mRNAs
+Two R scripts: 
 
-**Empirical gene enrichment analysis** : to perform gene enrichment analysis and permutation test on targeted genes of identified circRNA-miRNA-mRNA interaction (Fig. 3B)  
+Step2.1_Relation_circRNA-miRNA.R 
 
----
+Step2.2_Relation_circRNA-miRNA-mRNA.R
 
-**Network graphics Cytoscape** (shell code)
+Step2.1_Relation_circRNA-miRNA.R
 
-    
-   to generate the up-regualted circRNA network(Fig.3E) (input files: up-node.txt and up-edge.txt)
+  Input:
    
-     $./run-up.sh > up.xml 
-     
-   to generate the down-regulated circRNA network(Fig.S6 ) (input files: down-node.txt and down-edge.txt)
+        circRNAs (DE-circRNAs and circRNAs from DE-modules) and the corresponding miRNAs with miRNA target sites in the circle sequences of the circRNAs (RNA22_circRNA_miRNA_module.xlsx)
    
-     $./run-down.sh > down.xml
-     
-The output file (up.xml or down.xml) can be open via Cytoscape (httep://cytoscape.org/)
+  Output:
+   
+        circRNA_miRNA_relation.xlsx
 
-by click : File -> Import -> Network -> File -> Select "up.xml" or "down.xml".
- 
+Step2.2_Relation_circRNA-miRNA-mRNA.R
 
-
----
-Details of the ASD_R_codes: 
-
-**Step1_lme_run.R**
-
-input: 
-
-          1) circRNA expression of 1060 events (circ1060_datRPM_134s.txt)
- 
-          2) host gene ENSG ID of 1060 circRNAs (circ1060_ENSG.txt) 
-          
-          3) characters of 134 individuals (datTraits_134s.txt) 
-          
-          4) mRNA expression of 134 individuals (datExpr_134s.txt)
+   Input:
+   
+        (1) circRNA_miRNA_relation.xlsx
+        (2) miRNA target genes (Supplemental_TableS4_targets_of_58miRNAs.xlsx)
+        
+   Output: 
     
+        (1) circ_miRNA_mRNA_relation.xlsx
+        (2) circ_miRNA_mRNA_relation_short.xlsx
 
-output: 
+Step3: calculating Spearman’s rank coefficients of correlation between circRNA, microRNA, and mRNA expression
 
-          circ1060_DEG_Diagnosis_134s.csv
+Five R scripts: 
 
+Step3.1_Correlation_circRNA-miRNA.R 
 
-**Step2.1_Relation_circRNA-miRNA.R**
+Step3.2_Correlation_miRNA-mRNA.R 
 
-input: 
+Step3.3.1_Correlation_DEcircRNA-mRNA.R
 
-          DEcircRNAs, module circRNAs and their target miRNAs (RNA22_circRNA_miRNA_module.xlsx)
+Step3.3.2_Correlation_module_circRNA-mRNA.R
 
-output: 
+Step3.4_Correlation_circRNA-miRNA-mRNA.R
 
-          circRNA_miRNA_relation.xlsx
+Step3.1_Correlation_circRNA-miRNA.R
 
+  Input:
+  
+        (1) circRNA expression (circ1060_datRPM_73s.txt; circ60_indiv73.csv)
+        (2) miRNA expression (miRNA699_73s_exp.txt; miRNA58_indiv73.csv)
+        (3) circ_miRNA_mRNA_relation_short.xlsx
+        
+  Output:
+   
+        circRNA_miRNA_spearman.xlsx
 
-**Step2.2_Relation_circRNA-miRNA-mRNA.R**
+Step3.2_Correlation_miRNA-mRNA.R
 
-input: 
-      
-      1) circRNA_miRNA_relation.xlsx
-      2) miRNA target genes (Supplemental_Table S4_targets_of_58miRNAs.xlsx)
+   Input:
     
-output: 
+        (1) miRNA expression (miRNA58_indiv73.csv)
+        (2) mRNA expression (73s_normalized_log2_FPKM_miRNA_targetG.transpose)
+        (3) miRNA-mRNA relation (58miRNA_targets_ENSG.txt)
+        
+   Output:
+   
+        miRNA_mRNA_spearman.xlsx
 
-      1) circ_miRNA_mRNA_relation.xlsx
-      2) circ_miRNA_mRNA_relation_short.xlsx
+Step3.3.1_Correlation_DEcircRNA-mRNA.R
 
-
-**Step3.1_Correlation_circRNA-miRNA.R**
-
-input: 
-
-     1) circRNA expression (circ1060_datRPM_73s.txt; circ60_indiv73.csv)
-     3) miRNA expression (miRNA699_73s_exp.txt; miRNA58_indiv73.csv)
-     2) circ_miRNA_mRNA_relation_short.xlsx
-     
-
-ouput: 
-
-     circRNA_miRNA_spearman.xlsx
-
-
-**Step3.2_Correlation_miRNA-mRNA.R**
-
-input: 
-
-     1) miRNA expression (miRNA58_indiv73.csv)
-     2) mRNA expression (73s_normalized_log2_FPKM_miRNA_targetG.transpose)
-     3) miRNA-mRNA relation (58miRNA_targets_ENSG.txt)
-
-output: 
-
-     miRNA_mRNA_spearman.xlsx
-
-
-**Step3.3.1_Correlation_DEcircRNA-mRNA.R**
-
-input: 
- 
-     1) circRNA expresion (circ60_indiv73.txt)
-     2) mRNA expression (73s_normalized_miRNA_targetG.transpose)
-
-output: 
-
-     DEcircRNA_mRNA_spearman.txt
-
-
-**Step3.3.2_Correlation_module_circRNA-mRNA.R**
-
-input: 
- 
-      1) circRNA expression (circRNA1060_73s_RPM.txt) 
-      2) mRNA expreesion (73s_normalized_miRNA_targetG_new.transpose) 
-      3) circ-miRNA-mRNA relation (mi-ci_sig_InModules_short.txt)
-
-output: 
-
-      Module_circRNA_mRNA_spearman.txt
-
-
-**Step3.4_Correlation_circRNA-miRNA-mRNA.R**
-
-input: 
-
-       1) circRNA-miRNA correlation (circRNA_miRNA_spearman.xlsx)
-       2) miRNA-mRNA correlation (miRNA_mRNA_spearman.xlsx)
-       3) circRNA-mRNA correlation (DEcirc_mRNA_spearman.txt; Module_circ_mRNA_spearman.txt)
-       4) circ-miRNA-mRNA relation (circ_miRNA_mRNA_relation.xlsx; 58miRNA_target_ENSG.txt)
-
-output: 
-
-       1) circRNA_miRNA_mRNA_spearman.xlsx
-       2) sponge_circRNA_miRNA_mRNA_spearman.xlsx
-
-
-**Empirical gene enrichment analysis: enrichment_permutation.R**
-
-input: 
-
-       circRNA_target_other_diseases.xlsx
-
-output: 
-
-       permutation_17categories_100000out.xlsx
+   Input:
+   
+       (1) DE-circRNA expression (circ60_indiv73.txt)
+       (2) mRNA expression (73s_normalized_miRNA_targetG.transpose)
        
-----
- **Miscellaneous**
+   Output:
+   
+       DEcirc_mRNA_spearman.txt
+
+Step3.3.2_Correlation_module_circRNA-mRNA.R
+
+   Input:
+   
+       (1) expression of circRNAs from DE-modules (circRNA1060_73s_RPM.txt) 
+       (2) mRNA expression (73s_normalized_miRNA_targetG_new.transpose) 
+       (3) circRNA (from DE-modules)-mRNA relation (mi-ci_sig_InModules_short.txt)
+       
+   Output:
+   
+       Module_circRNA_mRNA_spearman.txt
+
+Step3.4_Correlation_circRNA-miRNA-mRNA.R
+
+   Input:
+   
+        (1) circRNA-miRNA correlation (circRNA_miRNA_spearman.xlsx)
+        (2) miRNA-mRNA correlation (miRNA_mRNA_spearman.xlsx)
+        (3) circRNA-mRNA correlation (DEcirc_mRNA_spearman.txt; Module_circ_mRNA_spearman.txt)
+        (4) circRNA-miRNA-mRNA relation (circ_miRNA_mRNA_relation.xlsx; 58miRNA_target_ENSG.txt)
+        
+  Output:
+  
+       (1) circRNA_miRNA_mRNA_spearman.xlsx
+       (2) sponge_circRNA_miRNA_mRNA_spearman.xlsx
+
+Step4: performing gene enrichment analysis and permutation test (Fig. 3B) on the target genes of the identified circRNA-miRNA-mRNA interactions  
+
+One R script: enrichment_permutation.R 
+
+enrichment_permutation.R
+
+  Input:
+  
+    targets of the identified circRNA-miRNA-mRNA interactions vs. diseases (circRNA_target_other_diseases.xlsx)
+    
+  Output:
+  
+        permutation_17categories_100000out.xlsx
+
+Since the sizes of the files (datExpr_134s.txt and DEcirc_mRNA_spearman.txt) are over the limitation of GitHub (50Mb), we deposited these two files in our FTP site at ftp://treeslab1.genomics.sinica.edu.tw/treeslabtools/circRNA_ASD.
+
+**2. Network graphics Cytoscape (shell code)**
+
+Two shell scripts:
+run-up.sh
+run-down.sh
+
+2.1 generating the upregulated circRNA network (Figure 3E)
+
+ (input files: up-node.txt and up-edge.txt)
  
- Two files cannnot be found in the circRNA_ASD GitHub repository due to over GitHub upload limit (50 Mb).
- Users can download them from our FTP (ftp://treeslab1.genomics.sinica.edu.tw/treeslabtools/circRNA_ASD).
-      
-      1) input/datExpr_134s.txt
-      2) ouput/DEcirc_mRNA_spearman.txt
-      
+    $./run-up.sh > up.xml
+
+2.2 generating the downregulated circRNA network (Supplementary Figure 6)
+
+  (input files: down-node.txt and down-edge.txt)
+  
+    $./run-down.sh > down.xml
+
+The output file (up.xml or down.xml) can be opened via Cytoscape (httep://cytoscape.org/) by click: File -> Import -> Network -> File -> Select "up.xml" or "down.xml".
