@@ -6,7 +6,7 @@ The scripts used in this study include two parts:
 1. Identification of DE-circRNAs and ASD-associated circRNA-miRNA-mRNA regulatory axes
 2. Visualization of the identified circRNA-miRNA-mRNA axes by Cytoscape
 
-**1. Identification of DE-circRNAs and ASD-associated circRNA-miRNA-mRNA regulatory axes (R code)**
+### 1. Identification of DE-circRNAs and ASD-associated circRNA-miRNA-mRNA regulatory axes (R code)
 
 All scripts in this part were gathered in the ASD_R_codes folder. The results can be found in the output folder. This part contains four main steps:
 
@@ -57,7 +57,7 @@ Step2.2_Relation_circRNA-miRNA-mRNA.R
         (1) circ_miRNA_mRNA_relation.xlsx
         (2) circ_miRNA_mRNA_relation_short.xlsx
 
-Step3: calculating Spearman’s rank coefficients of correlation between circRNA, microRNA, and mRNA expression
+**Step3: calculating Spearman’s rank coefficients of correlation between circRNA, microRNA, and mRNA expression**
 
 Five R scripts: 
 
@@ -132,7 +132,7 @@ Step3.4_Correlation_circRNA-miRNA-mRNA.R
        (1) circRNA_miRNA_mRNA_spearman.xlsx
        (2) sponge_circRNA_miRNA_mRNA_spearman.xlsx
 
-Step4: performing gene enrichment analysis and permutation test (Fig. 3B) on the target genes of the identified circRNA-miRNA-mRNA interactions  
+**Step4: performing gene enrichment analysis and permutation test (Fig. 3B) on the target genes of the identified circRNA-miRNA-mRNA interactions**  
 
 One R script: enrichment_permutation.R 
 
@@ -148,19 +148,19 @@ enrichment_permutation.R
 
 Since the sizes of the files (datExpr_134s.txt and DEcirc_mRNA_spearman.txt) are over the limitation of GitHub (50Mb), we deposited these two files in our FTP site at ftp://treeslab1.genomics.sinica.edu.tw/treeslabtools/circRNA_ASD.
 
-**2. Network graphics Cytoscape (shell code)**
+### 2. Network graphics Cytoscape (shell code)
 
 Two shell scripts:
 run-up.sh
 run-down.sh
 
-2.1 generating the upregulated circRNA network (Figure 3E)
+**2.1 generating the upregulated circRNA network (Figure 3E)**
 
  (input files: up-node.txt and up-edge.txt)
  
     $./run-up.sh > up.xml
 
-2.2 generating the downregulated circRNA network (Supplementary Figure 6)
+**2.2 generating the downregulated circRNA network (Supplementary Figure 6)**
 
   (input files: down-node.txt and down-edge.txt)
   
