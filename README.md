@@ -1,5 +1,9 @@
 ### Geneme-wide, integrative analysis of circular RNA dysregulation and the corresponding circular RNA-microRNA-mRNA regulatory axes in autism
-Chen et al. 
+---
+### Citation
+
+Chen, Y. J., Chen, C. Y., Mai, T. L., Chuang, C. F., Chen, Y. C., Gupta, S. K., . . . Chuang, T. J. (2020). Genome-wide integrative analysis of circular RNA dysregulation and the corresponding circular RNA-microRNA-mRNA regulatory axes in autism. Genome Res. doi:10.1101/gr.255463.119
+
 
 ---
 The scripts used in this study include two parts: 
