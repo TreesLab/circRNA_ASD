@@ -150,7 +150,9 @@ One R script: enrichment_permutation.R
   
         permutation_17categories_100000out.xlsx
 
-Since the sizes of the files (datExpr_134s.txt and DEcirc_mRNA_spearman.txt) are over the limitation of GitHub (50Mb), we deposited these two files in our FTP site at ftp://treeslab1.genomics.sinica.edu.tw/treeslabtools/circRNA_ASD.
+
+**Notices** 
+The input datasets related sample information are however avaialbe from the authors upon reasonable request and with permisson of UCLA-ASD study under accession number syn4587609 (https://www.synapse.org). 
 
 ### 2. Network graphics Cytoscape (shell code)
 
